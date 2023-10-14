@@ -9,23 +9,23 @@ import Build_transaction from "./pages/build_transaction";
 import Interact_contract from "./pages/interact_contract";
 const router=createBrowserRouter([
     {
-        path:'/dapp_website_react/',
+        path:'/',
         element:<Home></Home>
     },
     {
-        path:'/dapp_website_react/connect_wallet',
+        path:'/connect_wallet',
         element:<Connect_wallet></Connect_wallet>
     },
     {
-        path:"/dapp_website_react/get_information",
+        path:"/get_information",
         element:<Get_information></Get_information>
     },
     {
-        path:"/dapp_website_react/build_transaction",
+        path:"/build_transaction",
         element:<Build_transaction></Build_transaction>
     },
     {
-        path:"/dapp_website_react/interact_contract",
+        path:"/interact_contract",
         element:<Interact_contract></Interact_contract>
     }
 ])
