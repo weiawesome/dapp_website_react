@@ -2,7 +2,7 @@
   "name": "dapp_website_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://weiawesome.github.io/dapp_website_react/",
+  "homepage": "./",
   "dependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.58",
