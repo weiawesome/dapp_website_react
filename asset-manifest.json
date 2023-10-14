@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dapp_website_react/static/css/main.645d00aa.css",
-    "main.js": "/dapp_website_react/static/js/main.f86d80af.js",
+    "main.js": "/dapp_website_react/static/js/main.21530027.js",
     "static/js/787.27713752.chunk.js": "/dapp_website_react/static/js/787.27713752.chunk.js",
     "index.html": "/dapp_website_react/index.html",
     "main.645d00aa.css.map": "/dapp_website_react/static/css/main.645d00aa.css.map",
-    "main.f86d80af.js.map": "/dapp_website_react/static/js/main.f86d80af.js.map",
+    "main.21530027.js.map": "/dapp_website_react/static/js/main.21530027.js.map",
     "787.27713752.chunk.js.map": "/dapp_website_react/static/js/787.27713752.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.645d00aa.css",
-    "static/js/main.f86d80af.js"
+    "static/js/main.21530027.js"
   ]
 }
