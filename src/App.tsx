@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-// @ts-ignore
-import {BrowserRouter as Router, createBrowserRouter, Route, RouterProvider, Switch} from 'react-router-dom';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from "./app/page";
 import Connect_wallet from "./pages/connect_wallet";
 import Get_information from "./pages/get_information";
