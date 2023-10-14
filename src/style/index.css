@@ -104,11 +104,12 @@ option{
     background-color: #1e1e1e;
     animation: up 0.5s ease-in-out;
     color: #f0f0f0;
-    box-shadow: 0.3rem 0rem 0.2rem 0.1rem;
+    border-radius: 1rem;
     transition: ease-in-out;
 }
 .CardContent{
     display: flex;
+    font-weight: bold;
     flex-direction: column;
 }
 .Card-Day{
