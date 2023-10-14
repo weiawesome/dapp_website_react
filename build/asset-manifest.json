@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.645d00aa.css",
-    "main.js": "/static/js/main.3b57dee5.js",
-    "static/js/787.27713752.chunk.js": "/static/js/787.27713752.chunk.js",
-    "index.html": "/index.html",
-    "main.645d00aa.css.map": "/static/css/main.645d00aa.css.map",
-    "main.3b57dee5.js.map": "/static/js/main.3b57dee5.js.map",
-    "787.27713752.chunk.js.map": "/static/js/787.27713752.chunk.js.map"
+    "main.css": "/dapp_website_react/static/css/main.645d00aa.css",
+    "main.js": "/dapp_website_react/static/js/main.cc4bc1e9.js",
+    "static/js/787.27713752.chunk.js": "/dapp_website_react/static/js/787.27713752.chunk.js",
+    "index.html": "/dapp_website_react/index.html",
+    "main.645d00aa.css.map": "/dapp_website_react/static/css/main.645d00aa.css.map",
+    "main.cc4bc1e9.js.map": "/dapp_website_react/static/js/main.cc4bc1e9.js.map",
+    "787.27713752.chunk.js.map": "/dapp_website_react/static/js/787.27713752.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.645d00aa.css",
-    "static/js/main.3b57dee5.js"
+    "static/js/main.cc4bc1e9.js"
   ]
 }
