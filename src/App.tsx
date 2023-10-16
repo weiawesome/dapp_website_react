@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Connect_wallet from "./pages/connect_wallet";
+
 const router=createBrowserRouter([
     // {
     //     path:'/',
