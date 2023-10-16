@@ -5,6 +5,12 @@ import "../app/globals.css"
 import "../style/connect_wallet.css"
 import {Link} from "react-router-dom";
 
+declare global {
+    interface Window {
+        ethereum?: any;
+    }
+}
+
 type web3ProviderType = Web3 | null;
 type ethersProviderType = ethers.BrowserProvider | null;
 export default function Connect_wallet() {
