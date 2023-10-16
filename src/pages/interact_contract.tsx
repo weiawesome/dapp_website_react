@@ -1,4 +1,3 @@
-'use client';
 import React, {useEffect, useRef, useState} from "react";
 import "../app/globals.css"
 import "../style/interact_contract.css"
