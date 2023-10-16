@@ -2,15 +2,16 @@ import React from 'react';
 import './App.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from "./app/page";
+import Connect_wallet from "./pages/connect_wallet";
 const router=createBrowserRouter([
     {
         path:'/',
         element:<Home></Home>
     },
-    // {
-    //     path:'/connect_wallet',
-    //     element:<Connect_wallet></Connect_wallet>
-    // },
+    {
+        path:'/connect_wallet',
+        element:<Connect_wallet></Connect_wallet>
+    },
     // {
     //     path:"/get_information",
     //     element:<Get_information></Get_information>
