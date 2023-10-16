@@ -5,7 +5,6 @@ import React, {useEffect, useState} from "react";
 import "../app/globals.css"
 import "../style/connect_wallet.css"
 import {Link} from "react-router-dom";
-import "../global"
 
 type web3ProviderType = Web3 | null;
 type ethersProviderType = ethers.BrowserProvider | null;
