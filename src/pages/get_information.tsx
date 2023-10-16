@@ -48,7 +48,6 @@ export default function Get_information() {
 
 
     const getBlockHeightWeb3=()=>{
-        // @ts-ignore
         const url=urlRef.current?.value.toString()===""?window.ethereum:urlRef.current?.value.toString();
         const web3 = new Web3(url);
         web3.eth.getBlockNumber()
@@ -61,7 +60,6 @@ export default function Get_information() {
             });
     }
     const getBlockByHeightWeb3=()=>{
-        // @ts-ignore
         const url=urlRef.current?.value.toString()===""?window.ethereum:urlRef.current?.value.toString();
         const web3 = new Web3(url);
         const blockNumber=Number(heightRef.current?.value);
@@ -81,7 +79,7 @@ export default function Get_information() {
         });
     }
     const getBlockByHashWeb3=()=>{
-        // @ts-ignore
+        
         const url=urlRef.current?.value.toString()===""?window.ethereum:urlRef.current?.value.toString();
         const web3 = new Web3(url);
         const blockHash=hashRef.current?.value;
@@ -89,8 +87,8 @@ export default function Get_information() {
             if (blockInfo) {
                 let tmp=new BlockInfo();
                 tmp.BlockHeight=Number(blockInfo.number);
-                // @ts-ignore
-                tmp.BlockHash=blockInfo.hash;
+                
+                tmp.BlockHash=blockInfo.hash!;
                 tmp.PreviousHash=blockInfo.parentHash;
                 setBlockByHashWeb3(tmp);
                 console.log('區塊資訊：', blockInfo);
@@ -102,13 +100,13 @@ export default function Get_information() {
         });
     }
     const getTransactionWeb3=()=>{
-        // @ts-ignore
+        
         const url=urlRef.current?.value.toString()===""?window.ethereum:urlRef.current?.value.toString();
         const web3 = new Web3(url);
         const transactionHash = transactionHashRef.current?.value.toString();
 
-        // @ts-ignore
-        web3.eth.getTransaction(transactionHash)
+        
+        web3.eth.getTransaction(transactionHash!)
             .then(transactionInfo => {
                 if (transactionInfo) {
                     console.log('交易資訊：', transactionInfo);
@@ -131,7 +129,7 @@ export default function Get_information() {
 
     const getBlockHeightEthers=()=>{
         setLastBlockNumberEthers(0);
-        // @ts-ignore
+        
         const provider =urlRef.current?.value.toString()===""? new ethers.BrowserProvider(window.ethereum):new ethers.JsonRpcProvider(urlRef.current?.value.toString());
         provider.getBlockNumber().then(blockNumber => {
             setLastBlockNumberEthers(blockNumber);
@@ -140,7 +138,7 @@ export default function Get_information() {
         });
     }
     const getBlockByHeightEthers=()=>{
-        // @ts-ignore
+        
         const provider =urlRef.current?.value.toString()===""? new ethers.BrowserProvider(window.ethereum):new ethers.JsonRpcProvider(urlRef.current?.value.toString());
         const blockNumber=Number(heightRef.current?.value);
         provider.getBlock(blockNumber).then(blockInfo => {
@@ -159,7 +157,7 @@ export default function Get_information() {
         });
     }
     const getBlockByHashEthers=()=>{
-        // @ts-ignore
+        
         const provider =urlRef.current!.value.toString()===""? new ethers.BrowserProvider(window.ethereum):new ethers.JsonRpcProvider(urlRef.current?.value.toString());
         const blockHash=hashRef.current!.value;
         provider.getBlock(blockHash).then(blockInfo => {
@@ -178,11 +176,11 @@ export default function Get_information() {
         });
     }
     const getTransactionEthers=()=>{
-        // @ts-ignore
+        
         const provider =urlRef.current?.value.toString()===""? new ethers.BrowserProvider(window.ethereum):new ethers.JsonRpcProvider(urlRef.current?.value.toString());
         const transactionHash=transactionHashRef.current?.value.toString();
-        // @ts-ignore
-        provider.getTransaction(transactionHash).then(transactionInfo => {
+        
+        provider.getTransaction(transactionHash!).then(transactionInfo => {
             if (transactionInfo) {
                 console.log('交易資訊：', transactionInfo);
                 let tmp=new TransactionInfo();
