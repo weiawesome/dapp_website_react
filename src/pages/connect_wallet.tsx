@@ -5,40 +5,36 @@ import React, {useEffect, useState} from "react";
 import "../app/globals.css"
 import "../style/connect_wallet.css"
 import {Link} from "react-router-dom";
+import "../../global"
+
+type web3ProviderType = Web3 | null;
+type ethersProviderType = ethers.BrowserProvider | null;
 export default function Connect_wallet() {
-    const [web3,setWeb3]=useState(null);
+    const [web3,setWeb3]=useState<web3ProviderType>(null);
     const [web3Address,setWeb3Address]=useState("");
     const [web3Amount,setWeb3Amount]=useState("");
-    const [provider,setProvider]=useState(null);
+    const [provider,setProvider]=useState<ethersProviderType>(null);
     const [ethersAddress,setEthersAddress]=useState("");
     const [ethersAmount,setEthersAmount]=useState("");
 
 
     useEffect(()=>{
-        // @ts-ignore
         if (typeof window.ethereum !== 'undefined') {
-            // @ts-ignore
             setWeb3(new Web3(window.ethereum));
-            // @ts-ignore
             setProvider(new ethers.BrowserProvider(window.ethereum));
         }
     },[])
 
     const initWeb3=async () => {
-        // @ts-ignore
         if (typeof window.ethereum !== 'undefined') {
             setWeb3Address("");
             setWeb3Amount("");
-            // @ts-ignore
             setWeb3(new Web3(window.ethereum));
             try {
-                // @ts-ignore
                 const accounts=await window.ethereum.request({method: 'eth_requestAccounts'});
                 const account = accounts[0];
-                // @ts-ignore
-                const balanceWei = await web3.eth.getBalance(account);
-                // @ts-ignore
-                const balanceEther = web3.utils.fromWei(balanceWei, 'ether');
+                const balanceWei = await web3!.eth.getBalance(account);
+                const balanceEther = web3!.utils.fromWei(balanceWei, 'ether');
                 setWeb3Amount(balanceEther);
                 setWeb3Address(accounts);
                 console.log('已連接到 MetaMask');
@@ -51,19 +47,14 @@ export default function Connect_wallet() {
 
     }
     const initEthers=async ()=> {
-        // @ts-ignore
         if (typeof window.ethereum !== 'undefined') {
             setEthersAddress("");
             setEthersAmount("");
-            // @ts-ignore
             await window.ethereum.request({ method: 'eth_requestAccounts' });
-            // @ts-ignore
             setProvider(new ethers.BrowserProvider(window.ethereum));
-            // @ts-ignore
-            const signer = await provider.getSigner();
+            const signer = await provider!.getSigner();
             const addr= await signer.getAddress();
-            // @ts-ignore
-            const balance = await provider.getBalance(addr);
+            const balance = await provider!.getBalance(addr);
             setEthersAmount(formatEther(balance));
             setEthersAddress(addr);
 
